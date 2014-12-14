@@ -32,19 +32,40 @@ var toString = function(data){
 
 app.use(express.static(__dirname));
 app.use(bodyParser.urlencoded({ extended: false })); 
-home.use(cookieParser()); 
+app.use(cookieParser()); 
 
 app.disable('x-powered-by');
+
+app.use(function(req, res, next){
+	var cookie = req.cookies.superstock; 
+
+	if( ! cookie ){
+		res.cookie('superstock', Random(), { expires: new Date(Date.now() + 60 * 60 * 1000)});
+	}
+
+	next(); 
+  
+});
 
 home.use(function(req, res, next){
   var cookie = req.cookies.superstock; 
   if( ! cookie ) return res.redirect('/login'); 
-  var authToken = 'session:'+cookie; 
+  var authToken = 'session:'+ cookie; 
   redis.get(authToken, function(err, reply){
   	if( err ) return res.send('db error');   
   	
   	if( ! reply ) return res.redirect('/login'); 
-    console.log(reply); 
+ 	
+ 	var session = null; 
+  	
+  	try{
+  		session = JSON.parse(reply); 
+  	} catch(e){
+
+  	}
+
+  	if( ! session.email ) return res.redirect('/login'); 
+
   	next(); 
   }); 
 
@@ -68,9 +89,31 @@ app.get('/', function(req, res){
 });
 
 app.get('/login', function(req, res){
-	var email = res.get('Superstock-Form-Data'); 
-	if( email ) res.send(email); 
-	res.send('login form'); 
+	var key = req.cookies.superstock;   
+
+	if( ! key ) return res.send('login form'); 
+
+	redis.get("session:" + key, function(err,reply){
+		if( err ) throw err; 
+
+		if( ! reply ) return res.send('login form'); 
+		
+		var data = null; 
+		
+		try {
+			data = JSON.parse(reply);  			
+		} catch(e){
+			return res.send(e); 
+		}
+		
+		if( data.error ) return res.send(data.error); 
+
+		return res.send('nothing here '); 
+
+	}); 
+
+	
+
 }); 
 
 app.post('/login', function(req,res){
@@ -84,9 +127,17 @@ app.post('/login', function(req,res){
 		var user = (rows.length) ? rows[0] : null; 
 
 		if( ! user ) {
+			var session = req.cookies.superstock; 
+			if( session ){
+				redis.setex("session:" + session, 60 * 60, JSON.stringify({
+					'form': req.body,
+					'error': 'invalid login or password'
+				})); 
+			}
 			return res.send('invalid login/password'); 
 		}
-		var cookie = Random(); 
+
+		var cookie = req.cookies.superstock ? req.cookies.superstock : Random(); 
 		var authToken = 'session:' + cookie; 
 		var days = (req.body.remember) ? 7 : 1; 
 		var expire = days * 24 * 60 * 60; 
