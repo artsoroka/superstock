@@ -1,0 +1,45 @@
+body {
+  padding-top: 50px;
+  padding-bottom: 20px;
+}
+
+.jumbotron {
+	background-image: url(http://ateljeebalans.nl/wp-content/uploads/2014/09/new-york-sky-scraper-bridge.jpg); 
+	background-repeat: no-repeat;
+    background-attachment: fixed;
+    background-position: center; 
+} 
+
+.container {
+	height: 250px; 
+}
+
+.dropdown-menu.multi-column .dropdown-menu {
+    display: block !important;
+    position: static !important;
+    margin: 0 !important;
+    border: none !important;
+    box-shadow: none !important;
+}
+
+*, *:before, *:after {box-sizing:  border-box !important;}
+
+
+.rowrow {
+ -moz-column-width: 18em;
+ -webkit-column-width: 18em;
+ -moz-column-gap: 1em;
+ -webkit-column-gap:1em; 
+  
+}
+
+.item {
+ display: inline-block;
+ padding:  .25rem;
+ width:  100%; 
+}
+
+.well {
+ position:relative;
+ display: block;
+}

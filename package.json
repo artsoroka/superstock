@@ -1,0 +1,11 @@
+{
+  "name": "shutterstock-app",
+  "version": "0.0.0",
+  "description": "Shutter stock implementation",
+  "main": "app.js",
+  "repository": "",
+  "author": "Artem Soroka <art.soroka@yandex.ru>",
+  "dependencies": {
+    "express": "4.10.1",
+  }
+}

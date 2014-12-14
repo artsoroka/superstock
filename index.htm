@@ -1,0 +1,305 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="description" content="">
+    <meta name="author" content="">
+    <link rel="icon" href="../../favicon.ico">
+
+    <title>Jumbotron Template for Bootstrap</title>
+
+    <!-- Bootstrap core CSS -->
+    <link href="/assets/css/bootstrap.min.css" rel="stylesheet">
+
+    <!-- Custom styles for this template -->
+    <link href="/assets/css/jumbotron.css" rel="stylesheet">
+
+    <!-- Just for debugging purposes. Don't actually copy these 2 lines! -->
+    <!--[if lt IE 9]><script src="../../assets/js/ie8-responsive-file-warning.js"></script><![endif]-->
+    <script src="../../assets/js/ie-emulation-modes-warning.js"></script>
+
+    <!-- HTML5 shim and Respond.js for IE8 support of HTML5 elements and media queries -->
+    <!--[if lt IE 9]>
+      <script src="https://oss.maxcdn.com/html5shiv/3.7.2/html5shiv.min.js"></script>
+      <script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script>
+    <![endif]-->
+  	
+  	<link href="//maxcdn.bootstrapcdn.com/font-awesome/4.2.0/css/font-awesome.min.css" rel="stylesheet">
+
+  </head>
+
+  <body>
+
+    <nav class="navbar navbar-default navbar-fixed-top" role="navigation">
+	  <div class="container-fluid">
+	    <!-- Brand and toggle get grouped for better mobile display -->
+	    <div class="navbar-header">
+	      <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1">
+	        <span class="sr-only">Toggle navigation</span>
+	        <span class="icon-bar"></span>
+	        <span class="icon-bar"></span>
+	        <span class="icon-bar"></span>
+	      </button>
+	      <a class="navbar-brand" href="#">SuperStock</a>
+	    </div>
+
+	    <!-- Collect the nav links, forms, and other content for toggling -->
+	    <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+	      <ul class="nav navbar-nav">
+	        <li class="dropdown">
+	          <a href="#" class="dropdown-toggle" data-toggle="dropdown">Images <span class="caret"></span></a>
+	          <ul class="dropdown-menu" role="menu">
+	            <li><a href="#">Photos</a></li>
+	            <li><a href="#">Vector</a></li>
+	            <li><a href="#">Editorial</a></li>
+	            <li class="divider"></li>
+	            <li><a href="#">Editor's choise</a></li>
+	            <li class="divider"></li>
+	            <li><a href="#">Most popular</a></li>
+	          </ul>
+	        </li>
+
+	        <li><a href="#">Audio</a></li>
+	        <li><a href="#">Video</a></li>
+
+	      	<li><a href="#"><i class="fa fa-phone fa-lg"></i> 8-800-100-1234</a></li>
+	      	<li><a href="#"><i class="fa fa-wechat fa-lg"></i> Live Chat</a></li>
+	      	<li><a href="#"> Plans and Pricing </a></li>
+
+	      </ul>
+	      <!--<form class="navbar-form navbar-left" role="search">
+	        <div class="form-group">
+	          <input type="text" class="form-control" placeholder="Search">
+	        </div>
+	        <button type="submit" class="btn btn-default">Submit</button>
+	      </form>-->
+	      <ul class="nav navbar-nav navbar-right">
+	        <li class="dropdown">
+	          <a href="#" class="dropdown-toggle" data-toggle="dropdown">
+	          <i class="fa fa-globe fa-lg"></i> 
+	          Language <span class="caret"></span></a>
+	          <ul class="dropdown-menu" role="menu">
+	            <li><a href="#">English</a></li>
+	            <li><a href="#">Český</a></li>
+	            <li><a href="#">Русский</a></li>
+	            <li><a href="#">中文</a></li>
+	            <li><a href="#">Český</a></li>
+	            <li><a href="#">Русский</a></li>
+	          </ul>
+	          <!--<li class="dropdown">
+            <a href="#" data-toggle="dropdown">Dropdown Heading</a>
+            <div class="dropdown-menu multi-column">
+              <div class="container-fluid">
+                <div class="row-fluid">
+                  <div class="span6">
+                    <ul class="dropdown-menu">
+                      <li><a href="#">Col 1 - Opt 1</a></li>
+                      <li><a href="#">Col 1 - Opt 2</a></li>
+                    </ul>
+                  </div>
+                  <div class="span6">
+                    <ul class="dropdown-menu">
+                      <li><a href="#">Col 2 - Opt 1</a></li>
+                      <li><a href="#">Col 2 - Opt 2</a></li>
+                    </ul>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </li>-->
+	        </li>
+	      	<li class="dropdown">
+                     <a href="http://www.jquery2dotnet.com" class="dropdown-toggle" data-toggle="dropdown">
+                     <i class="fa fa-user fa-lg"></i> Sign In <b class="caret"></b></a>
+                     <ul class="dropdown-menu" style="padding: 15px;min-width: 250px;">
+                        <li>
+                           <div class="row">
+                              <div class="col-md-12">
+                                 <form class="form" role="form" method="post" action="login" accept-charset="UTF-8" id="login-nav">
+                                    <div class="form-group">
+                                       <label class="sr-only" for="exampleInputEmail2">Email address</label>
+                                       <input type="email" class="form-control" id="exampleInputEmail2" placeholder="Email address" required>
+                                    </div>
+                                    <div class="form-group">
+                                       <label class="sr-only" for="exampleInputPassword2">Password</label>
+                                       <input type="password" class="form-control" id="exampleInputPassword2" placeholder="Password" required>
+                                    </div>
+                                    <div class="checkbox">
+                                       <label>
+                                       <input type="checkbox"> Remember me
+                                       </label>
+                                    </div>
+                                    <div class="form-group">
+                                       <button type="submit" class="btn btn-success btn-block">Sign in</button>
+                                    </div>
+                                 </form>
+                              </div>
+                           </div>
+                        </li>
+                  
+	      </ul>
+	    </div><!-- /.navbar-collapse -->
+	  </div><!-- /.container-fluid -->
+    </nav>
+
+
+    <!-- Main jumbotron for a primary marketing message or call to action -->
+    <div class="jumbotron">
+      <div class="container" align="center">
+        <h1> </h1>
+
+		<div class="row">
+		  <div class="col-lg-6 col-md-offset-3">
+		    <div class="input-group input-group-lg" id="search-box">
+		      <input type="text" class="form-control">
+		      <div class="input-group-btn">
+		        <button type="button" class="btn btn-default dropdown-toggle" data-toggle="dropdown">Find <span class="caret"></span></button>
+		        <ul class="dropdown-menu dropdown-menu-right" role="menu">
+		          <li><a href="#">Photo</a></li>
+		          <li><a href="#">Vector</a></li>
+		          <li><a href="#">Editorial</a></li>
+		          <li class="divider"></li>
+		          <li><a href="#">Audio content</a></li>
+		          <li class="divider"></li>
+		          <li><a href="#">Video footage </a></li>
+		        </ul>
+		      </div><!-- /btn-group -->
+		    </div><!-- /input-group -->
+		  </div><!-- /.col-lg-6 -->
+		</div><!-- /.row -->
+        <p> </p>
+      </div>
+    </div>
+
+    <div class="container">
+      <!-- Example row of columns -->
+      <div class="row">
+        <div class="col-md-4">
+          <h2>Heading</h2>
+          <p>Donec id elit non mi porta gravida at eget metus. Fusce dapibus, tellus ac cursus commodo, tortor mauris condimentum nibh, ut fermentum massa justo sit amet risus. Etiam porta sem malesuada magna mollis euismod. Donec sed odio dui. </p>
+          <p><a class="btn btn-default" href="#" role="button">View details &raquo;</a></p>
+        </div>
+        <div class="col-md-4">
+          <h2>Heading</h2>
+          <p>Donec id elit non mi porta gravida at eget metus. Fusce dapibus, tellus ac cursus commodo, tortor mauris condimentum nibh, ut fermentum massa justo sit amet risus. Etiam porta sem malesuada magna mollis euismod. Donec sed odio dui. </p>
+          <p><a class="btn btn-default" href="#" role="button">View details &raquo;</a></p>
+       </div>
+        <div class="col-md-4">
+          <h2>Heading</h2>
+          <p>Donec sed odio dui. Cras justo odio, dapibus ac facilisis in, egestas eget quam. Vestibulum id ligula porta felis euismod semper. Fusce dapibus, tellus ac cursus commodo, tortor mauris condimentum nibh, ut fermentum massa justo sit amet risus.</p>
+          <p><a class="btn btn-default" href="#" role="button">View details &raquo;</a></p>
+        </div>
+      </div>
+
+      <hr>
+
+	<div class="container">
+	  <h1>Most Popular on this week </h1>
+	<div class="rowrow">
+	    <div class="item">
+	      <div class="well"> 
+	        <img class="img-responsive" src="http://ateljeebalans.nl/wp-content/uploads/2014/09/new-york-sky-scraper-bridge.jpg">
+	      </div>
+	    </div>
+	 	<div class="item">
+	        <div class="well"> 
+	        <img class="img-responsive" src="http://www.thujagardens.com/sitebuilder/images/SummerRedMaple-319x367.jpg">
+	        </div>
+	    </div>
+	    <div class="item">
+	        <div class="well"> 
+	        <img class="img-responsive" src="http://ateljeebalans.nl/wp-content/uploads/2014/09/new-york-sky-scraper-bridge.jpg">
+	        </div>
+	    </div>
+	    <div class="item">
+	        <div class="well">
+	        <img class="img-responsive" src="http://www.thujagardens.com/sitebuilder/images/SummerRedMaple-319x367.jpg">
+	        </div>
+	    </div>
+	    <div class="item">
+	        <div class="well"> 
+	        <img class="img-responsive" src="http://ateljeebalans.nl/wp-content/uploads/2014/09/new-york-sky-scraper-bridge.jpg">
+	        </div>
+	    </div>
+	 	<div class="item">
+	        <div class="well"> 
+	        <img class="img-responsive" src="http://www.thujagardens.com/sitebuilder/images/SummerRedMaple-319x367.jpg">
+	        </div>
+	    </div>
+	    <div class="item">
+	        <div class="well">
+	        <img class="img-responsive" src="http://ateljeebalans.nl/wp-content/uploads/2014/09/new-york-sky-scraper-bridge.jpg">
+	        </div>
+	    </div>
+	    <div class="item">
+	        <div class="well"> 
+	        <img class="img-responsive" src="http://www.thujagardens.com/sitebuilder/images/SummerRedMaple-319x367.jpg">
+	        </div>
+	    </div>
+	    <div class="item">
+	        <div class="well"> 
+	        <img class="img-responsive" src="http://ateljeebalans.nl/wp-content/uploads/2014/09/new-york-sky-scraper-bridge.jpg">
+	        </div>
+	    </div>
+	    <div class="item">
+	        <div class="well"> 
+	        <img class="img-responsive" src="http://www.thujagardens.com/sitebuilder/images/SummerRedMaple-319x367.jpg">
+	        </div>
+	    </div>
+	</div>
+	</div>
+
+
+
+
+
+      <footer>
+        <p>&copy; SuperStock 2014</p>
+      </footer>
+
+    </div> <!-- /container -->
+
+	<!-- Modal -->
+	<div class="modal fade" id="myModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+	  <div class="modal-dialog">
+	    <div class="modal-content">
+	      <div class="modal-header">
+	        <button type="button" class="close" data-dismiss="modal"><span aria-hidden="true">&times;</span><span class="sr-only">Close</span></button>
+	        <h4 class="modal-title" id="myModalLabel">View image</h4>
+	      </div>
+	      <div class="modal-body" id="modal-body" align="center">
+	        
+	      </div>
+	      <div class="modal-footer">
+	      	<a class="btn btn-default"><i class="fa fa-heart fa-lg"></i></a>
+	      	<a class="btn btn-default"><i class="fa fa-shopping-cart fa-lg"></i></a>
+	      	<a class="btn btn-default"><i class="fa fa-lightbulb-o fa-lg"></i></a>
+	        <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+	      </div>
+	    </div>
+	  </div>
+	</div>
+
+
+    <!-- Bootstrap core JavaScript
+    ================================================== -->
+    <!-- Placed at the end of the document so the pages load faster -->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script>
+    <script src="/assets/js/bootstrap.min.js"></script>
+    <!-- IE10 viewport hack for Surface/desktop Windows 8 bug -->
+    <script src="../../assets/js/ie10-viewport-bug-workaround.js"></script>
+  	<script type="text/javascript">
+  		$('.img-responsive').click(function(){
+  			
+  			var image = $(this).attr('src'); 
+  			$('#modal-body').html('<img class="img-responsive" src=' + image + '>'); 
+
+  			$('#myModal').modal('show'); 
+  		});
+
+  	</script>
+
+  </body>
+</html>
