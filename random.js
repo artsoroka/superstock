@@ -5,7 +5,7 @@ module.exports = function(){
                                .substring(1);
                 }
 
-                return s4() + s4() + '-' + s4() + '-' + s4() + '-' +
+                return s4() + Date.now() + s4() + '-' + s4() + '-' + s4() + '-' +
                            s4() + '-' + s4() + s4() + s4();
 
         }
