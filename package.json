@@ -7,5 +7,6 @@
   "author": "Artem Soroka <art.soroka@yandex.ru>",
   "dependencies": {
     "express": "4.10.1",
+    "body-parser": "~1.10"
   }
 }
