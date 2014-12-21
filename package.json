@@ -13,5 +13,6 @@
     "hiredis": "0.1.17",  
     "redis": "0.12.1",
     "mustache-express": "1.2.1" 
+    "nodemailer": "1.2.0"
   }
 }
