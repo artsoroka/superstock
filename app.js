@@ -2,6 +2,9 @@ var express = require('express'),
 	app = express(),
 	home = express(); 
 
+var mustacheExpress = require('mustache-express');
+
+
 var Random = require('./random.js'); 
 
 var bodyParser = require('body-parser'); 
@@ -34,6 +37,13 @@ app.use(express.static(__dirname));
 app.use(bodyParser.urlencoded({ extended: false })); 
 app.use(cookieParser()); 
 
+// Register '.mustache' extension with The Mustache Express
+app.engine('mustache', mustacheExpress());
+
+app.set('view engine', 'mustache');
+app.set('views', __dirname + '/views');
+
+
 app.disable('x-powered-by');
 
 app.use(function(req, res, next){
@@ -41,9 +51,35 @@ app.use(function(req, res, next){
 
 	if( ! cookie ){
 		res.cookie('superstock', Random(), { expires: new Date(Date.now() + 60 * 60 * 1000)});
+		req.session_data = {}; 
+		req.session_data.auth = false; 
+		req.session_data.username = null; 
+		return next(); 
 	}
+	
+	var authToken = authToken = 'session:'+ cookie; 
+	redis.get(authToken, function(err, reply){
+		if( err ) return res.send('error'); 
+		  	
+  	try{
+  		var session = JSON.parse(reply); 
+  	} catch(e){
 
-	next(); 
+  	}
+  	
+  	if( session ){
+  	
+			req.session_data = session; 
+			req.session_data.auth = true; 
+			
+  	} else {
+  		  	
+			req.session_data = {}; 
+			req.session_data.auth = false; 
+  	}
+  	next(); 
+	});
+	
   
 });
 
@@ -78,14 +114,11 @@ home.get('/', function(req,res){
 app.use('/home', home); 
 
 app.get('/', function(req, res){
-	
-	fs.readFile('index.htm', function(err,data){
-		if( err ) return res.send(err); 
-
-		res.send(toString(data));  
-
-	}); 
-
+	var session = req.session_data || {}; 
+  res.render('index', {
+  	Auth: session.auth,
+  	username: session.username
+  }); 
 });
 
 app.get('/login', function(req, res){
@@ -158,4 +191,4 @@ app.get('/random', function(req,res){
 	res.send(Random()); 
 })
 
-app.listen(8080);
+app.listen(process.env.PORT || 3000, process.env.IP || "0.0.0.0"); 
